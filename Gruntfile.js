@@ -7,8 +7,8 @@ module.exports = function(grunt) {
         //   build: ['build/', 'build_php/']
         // },
         time: Date.now(),
-        static_host: 'http://localhost:7000',
-        root_host: 'http://localhost:7000',
+        static_host: '',
+        root_host: '',
         //清除build
         clean: {
             build: ['dest/']

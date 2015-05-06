@@ -115,132 +115,82 @@ input[type="button"],input[type="submit"],input[type="reset"]{
 .wrapper{width: 16rem; height: 100%; margin: 0 auto; position: relative;}
 
 
-//登陆菜单
-.login_wrap{
-	position: fixed; left: 12rem; top: 80%; width: 3rem; height: 3rem; z-index: 10; background-color: #fff; border: 2px solid #fff;.border-radius(50%); .box-shadow(0 2px 4px rgba(0, 0, 0, 0.24)); .transition(left 0.2s ease);
-	img{.border-radius(50%); width: 100%; height: 100%;}
-	.login_menu{ display: none; position: absolute; border-radius: 4px; background-color: #fff; bottom: 0; right: 3.7rem; width: 5rem; .box-shadow(-2px 2px 3px rgba(0, 0, 0, 0.28)); .animation(fadeInLeft .2s 0s ease both);
-		background: rgb(255,255,255); /* Old browsers */
-		background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(236,236,236,1) 100%); /* FF3.6+ */
-		background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(236,236,236,1))); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(236,236,236,1) 100%); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(236,236,236,1) 100%); /* Opera 11.10+ */
-		background: -ms-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(236,236,236,1) 100%); /* IE10+ */
-		background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(236,236,236,1) 100%); /* W3C */
+// //登陆菜单
+// .login_wrap{
+// 	position: fixed; left: 12rem; top: 80%; width: 3rem; height: 3rem; z-index: 10; background-color: #fff; border: 2px solid #fff;.border-radius(50%); .box-shadow(0 2px 4px rgba(0, 0, 0, 0.24)); .transition(left 0.2s ease);
+// 	img{.border-radius(50%); width: 100%; height: 100%;}
+// 	.login_menu{ display: none; position: absolute; border-radius: 4px; background-color: #fff; bottom: 0; right: 3.7rem; width: 5rem; .box-shadow(-2px 2px 3px rgba(0, 0, 0, 0.28)); .animation(fadeInLeft .2s 0s ease both);
+// 		background: rgb(255,255,255); /* Old browsers */
+// 		background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(236,236,236,1) 100%); /* FF3.6+ */
+// 		background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(236,236,236,1))); /* Chrome,Safari4+ */
+// 		background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(236,236,236,1) 100%); /* Chrome10+,Safari5.1+ */
+// 		background: -o-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(236,236,236,1) 100%); /* Opera 11.10+ */
+// 		background: -ms-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(236,236,236,1) 100%); /* IE10+ */
+// 		background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(236,236,236,1) 100%); /* W3C */
 
-		&:after{ content: ''; position: absolute; z-index: -1; right: -0.6rem; bottom: 0.3rem; .translate; border-left: 0.7rem solid #ECECEC; border-top: 1rem solid transparent; border-bottom: 1rem solid transparent;}
-		a{ display: block; text-align: center; .lh(1.5rem); font-size: 0.6rem; border-radius: 4px;
-			&:active{ background-color: #E8E8E8;}
-		}
-		i{ color: #464C52; margin-right: 0.3rem;  font-size: 0.6rem;}
-	}
-	.nologin{ display: block; margin-left: 0.2rem; text-align: center; height: 100%; line-height: 2.8rem; color: @tc; font-size: 1.6rem;}
-}
-.login-menu-show{
-	.login_menu{ display: block;}
-}
-
-.drag-enable{ box-shadow:  0 0 40px #000 !important; .transform(scale(1.2));.transition(-webkit-transform 0.2s ease);}
-
-
-//页头
-.main_header{ background-color: #fff; position: relative; height: 2rem; line-height: 2rem;z-index: 10;  font-size: 0.7rem; .box-shadow(0 1px 4px rgba(0, 0, 0, 0.1));
-	.logo{ height: 2rem; width: 2rem;color: #fff; background-color: @tc; text-align: center; font-size: 1.2rem;}
-	.title{ display: block; width: 12rem;  text-align: center; color: @tc;}
-	.menu_ico{ height: 2rem; width: 2rem; color: @tc;text-align: center; font-size: 1.2rem;}
-
-	.menu_box{ position: absolute; top: 2.5rem; right: 0.5rem; background-color: #fff; width: 11rem; .border-radius(2px); .box-shadow(0 4px 6px rgba(0, 0, 0, 0.04)); display: none;
-         .animation(fadeInRightBig .2s 0s ease both);}
-	form{ padding: 0.5rem; 
-		input{ height: 1.48rem;}
-		i{color: #A5A9AD; font-size: 1rem; height: 1.48rem; position: absolute; top: 0; left: 0; vertical-align: top; z-index: 1;}
-        i:before { .lh(1.48rem); vertical-align: top; }
-		.submit_btn{ width: 4.85rem; vertical-align: top;}
-		.prd{ margin-right: 0.3rem; background-color: #FA7373;}
-		.i_w{ height: 1.48rem; margin-bottom: 0.3rem; position: relative;}
-        .i_b { height: 1.48rem;}
-		.search_input{position: absolute; top: 0;width: 100%; padding-left: 1.2rem; font-size: .6rem; border-bottom: 1px solid #a8a8a8; .border-radius(0); .box-shadow(none)}
-	}
-	&.menu-show{ overflow: visible;
-		.menu_box{ display: block;}
-	}
-	.nav_box{ padding-bottom: 0.5rem;
-		a{display: block; padding: 0 0.5rem;
-			&:hover{ display: block;}
-			&:active{ background-color: @ac;}
-		}
-		i{ width: 1.5rem; text-align: center; .lh(1.5rem); .di; margin-right: 0.3rem; .border-radius; font-size: 1rem;}
-		.icon-store{ background-color: #3DD5A1;}
-		.icon-motor{ background-color: #49A1DD;}
-		.icon-housekeeping{ background-color: #397BBE;}
-		.icon-apple{ background-color: #FA7373;}
-		.icon-shopping{ background-color: #F2D774;}
-		.icon-map{ background-color: #697F96;}
-	}
-}
-
-//页脚
-.main_footer{
-	text-align: center; background-color: #fff; border-top: 1px solid #E7E7E7;
-    height: 3rem;
-    padding: 0.5rem;
-    .d{ font-size: .8rem;}
-    .c{ color:#a5a9ad;}
-
-}
-// .footer_pusher {
-//     height: 2rem; //footer的高度
+// 		&:after{ content: ''; position: absolute; z-index: -1; right: -0.6rem; bottom: 0.3rem; .translate; border-left: 0.7rem solid #ECECEC; border-top: 1rem solid transparent; border-bottom: 1rem solid transparent;}
+// 		a{ display: block; text-align: center; .lh(1.5rem); font-size: 0.6rem; border-radius: 4px;
+// 			&:active{ background-color: #E8E8E8;}
+// 		}
+// 		i{ color: #464C52; margin-right: 0.3rem;  font-size: 0.6rem;}
+// 	}
+// 	.nologin{ display: block; margin-left: 0.2rem; text-align: center; height: 100%; line-height: 2.8rem; color: @tc; font-size: 1.6rem;}
+// }
+// .login-menu-show{
+// 	.login_menu{ display: block;}
 // }
 
+// .drag-enable{ box-shadow:  0 0 40px #000 !important; .transform(scale(1.2));.transition(-webkit-transform 0.2s ease);
 
-//弹出层
 
-.lightbox { display:none;
-    .boxTitle{ background-color: #f1f1ef; .cf; cursor: move; 
-    	-moz-user-select:none;/*火狐*/
-		-webkit-user-select:none;/*webkit浏览器*/
-		-ms-user-select:none;/*IE10*/
-		-khtml-user-select:none;/*早期浏览器*/
-		user-select:none;
-        .boxName{ float: left;  text-align: center; color: #fff; .lh(1.5rem);
-            em,i{ display: block; float: left; height: 1.5rem;}
-            //i{ .bg("light_flag.png",no-repeat, right center); width: 11px;}
-            em{ padding: 0 10px; color: #333; font-size: .6rem;}
-        }
-        .close {
-            position: absolute;
-			color: #FFF;
-			background-color: #FC5A5A;
-			right: .5rem;
-			top: -.5rem;
-			z-index: 1;
-			font-size: .6rem;
-			line-height: 1rem;
-			height: 1rem;
-			width: 1rem;
-			text-align: center;
-			box-shadow: 0 0 .1rem #FA7373;
-        }
-    }
-}
+// //弹出层
 
-.lightboxpop {position:fixed;bottom: 0; left:0; width:16rem; z-index:2002; .box-shadow(0 0 50px rgb(85, 85, 85));  background-color: #fff;
-	.animation(fadeInBottom .4s 0s ease both);
-}
+// .lightbox { display:none;
+//     .boxTitle{ background-color: #f1f1ef; .cf; cursor: move; 
+//     	-moz-user-select:none;/*火狐*/
+// 		-webkit-user-select:none;/*webkit浏览器*/
+// 		-ms-user-select:none;/*IE10*/
+// 		-khtml-user-select:none;/*早期浏览器*/
+// 		user-select:none;
+//         .boxName{ float: left;  text-align: center; color: #fff; .lh(1.5rem);
+//             em,i{ display: block; float: left; height: 1.5rem;}
+//             //i{ .bg("light_flag.png",no-repeat, right center); width: 11px;}
+//             em{ padding: 0 10px; color: #333; font-size: .6rem;}
+//         }
+//         .close {
+//             position: absolute;
+// 			color: #FFF;
+// 			background-color: #FC5A5A;
+// 			right: .5rem;
+// 			top: -.5rem;
+// 			z-index: 1;
+// 			font-size: .6rem;
+// 			line-height: 1rem;
+// 			height: 1rem;
+// 			width: 1rem;
+// 			text-align: center;
+// 			box-shadow: 0 0 .1rem #FA7373;
+//         }
+//     }
+// }
 
-//comfirm
-.confirm-main{
-	text-align: center; padding: .5rem;
-	.confirm-message{ margin-bottom: .5rem;}
-	.alert_btn{ font-size: 0;}
-	.si-button{ font-size: .6rem; width: 7rem; .di; color:#fff; background-color: @tc; .lh(1.5rem); .border-radius(.1rem)}
-	.cancel{ background-color: #EFEFEF; color: #7C7C7C; margin-left: .5rem;}
-}
+// .lightboxpop {position:fixed;bottom: 0; left:0; width:16rem; z-index:2002; .box-shadow(0 0 50px rgb(85, 85, 85));  background-color: #fff;
+// 	.animation(fadeInBottom .4s 0s ease both);
+// }
 
-.alert-plug{
-	position: fixed; top: 50%; left: 4rem; z-index: 999999; width: 8rem; background-color: rgba(0, 0, 0, 0.6); padding: 0.4rem; text-align: center; color: #fff;.animation(fadeIn .4s 0s ease both);
-}
+// //comfirm
+// .confirm-main{
+// 	text-align: center; padding: .5rem;
+// 	.confirm-message{ margin-bottom: .5rem;}
+// 	.alert_btn{ font-size: 0;}
+// 	.si-button{ font-size: .6rem; width: 7rem; .di; color:#fff; background-color: @tc; .lh(1.5rem); .border-radius(.1rem)}
+// 	.cancel{ background-color: #EFEFEF; color: #7C7C7C; margin-left: .5rem;}
+// }
 
-@media screen and(min-width: 750px){
-	body{ font-size: 0.6rem;}
-}
+// .alert-plug{
+// 	position: fixed; top: 50%; left: 4rem; z-index: 999999; width: 8rem; background-color: rgba(0, 0, 0, 0.6); padding: 0.4rem; text-align: center; color: #fff;.animation(fadeIn .4s 0s ease both);
+// }
+
+// @media screen and(min-width: 750px){
+// 	body{ font-size: 0.6rem;}
+// }
