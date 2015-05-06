@@ -1,0 +1,44 @@
+*.iml
+*.ipr
+*.iws
+*.class
+target/
+classes/
+.idea/
+dest/
+node_modules/
+
+
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+*.tmp
+*.bak
+*~.nib
+
+.classpath
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+out/
+/style/less/lib.less

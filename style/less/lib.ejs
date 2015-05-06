@@ -1,0 +1,46 @@
+@import url(css3.less);
+.cf(){
+	min-height: 1px;zoom:1;
+	&:after{content:"020"; display: block;height: 0; clear: both;visibility:hidden}
+	.fl{ float: left;}
+	.fr{ float: right;}
+}
+.omit(){ 
+	white-space: nowrap; overflow: hidden;word-wrap:normal;-o-text-overflow:ellipsis;text-overflow:ellipsis;
+}	
+.trs(){ 
+	.transition(all 0.2s ease-in-out);
+}
+.trs500(){ 
+	.transition(all 0.5s ease-in-out);
+}
+@url:"images/";
+@bcolor: #ccc;
+
+.bi(@image:none){background-image:url("@{url}@{image}?<%=time%>")}
+.bg(@image:none,@repeat:no-repeat,@position:0 0,@color:transparent){background:@color url("@{url}@{image}?<%=time%>") @repeat @position}
+.triangle(){ width: 0; height: 0; font-size: 0; line-height: 0; vertical-align: middle;border-color:transparent;border-style:solid}
+.lh(@h){ line-height: @h; height: @h;}
+.btn(@color, @bor-ra:2px, @fcolor: @color / 2){ 
+	.q-grad(@color, top, 0.1); color: @fcolor; border:1px solid @color / 1.2; cursor: pointer; .border-radius(@bor-ra);.transition(all 0.2s ease);
+	&:hover{
+		background-color: @color / 1.1;
+	}
+	&:active{
+		background-image: none;
+	}
+}
+.di(){
+	display: inline-block;vertical-align: middle;
+}
+.op(@n:100){
+	opacity: @n / 100; filter:alpha(opacity=@n);
+}
+
+@font-face {font-family: 'iconfont';
+    src: url('<%=root_host%>/style/images/iconfont.eot'); /* IE9*/
+    src: url('<%=root_host%>/style/images/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('<%=root_host%>/style/images/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('<%=root_host%>/style/images/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('<%=root_host%>/style/images/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}

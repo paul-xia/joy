@@ -1,0 +1,108 @@
+@tc:#49a1dd;
+.order_box{ padding: 0.5rem 0;
+	.address_list{ background-color: #fff; margin-bottom: 0.5rem;}
+	.address_list.listShow{
+		.order_man{ display: block;  }
+		.current{ box-shadow: 0 0 .2rem #C2C2C2; position: relative; z-index: 1}
+		.link_to{ display: block;}
+	}
+	.order_man{background-color: #fff;  display: none; .animation(bounceIn .2s 0s ease both);
+		.info{ width: 15rem;  padding: 0.5rem; line-height: 1.3;
+			em{width: 12.5rem;}
+			.iconfont{ width: 1.5rem; text-align: center;}
+			.icon-124smileface{ color: #F97272; font-size: 1.2rem;}
+			.icon-map{ color: #49A1DD; font-size: 1rem;}
+			span{ padding-right: 1rem;}
+		}
+		.man{ font-size: 0.8rem; margin-bottom: 0.2rem;}
+		.addr{ font-size: 0.6rem; 
+			em{color: #A5A9AD; line-height: 1.5}
+		}
+		.change{ width: 1rem; height: 100%; height: 4rem; position: relative;
+			a{
+				color: #A5A9AD; font-size: 0.8rem; 
+				&:before{top: 50%; .translate(0, -50%); position: absolute;}
+			}
+		}
+	}
+	.current{ display: block;}
+
+	.link_to{ text-align: center; .lh(1.5rem); display: none;
+		a{color: @tc; display: block;}
+	}
+	.shop_item{
+		margin-bottom: 0.5rem; background-color: #fff;
+		h2{ font-size: 0.8rem;}
+		.shop_t{ padding: 0.5rem 0.5rem 0.3rem; }
+		.prd_item{
+			padding: 0.3rem 0.5rem;border-top: 1px solid #e2e5e8;
+			a{ font-size: 0;}
+			.di{ font-size: 0.6rem;}
+			img{ width: 3rem; margin-right: 1rem;}
+			.name{ width: 6rem;margin-right: 0.3rem; font-size: 0.6rem;}
+			.num{ width: 4rem; text-align: right; font-size: 0.6rem;
+				.s{ color: #fa7373}
+				.n{ color: #49a1d0;}
+			}
+		}
+		.if{ color: #a5a9ad;
+			.n{ color: @tc;}
+			.p{ color: #fa7373;}
+		}
+	}
+
+	.order_count{ background-color: #fff; border-top: 1px solid #ccc; padding: 0.3rem 0.5rem; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 0;
+		.mt{ text-align: right; width: 11.5rem; font-size: 0.6rem; line-height: 1.2;}
+		.n{ color: #49a1d0;}
+		.m{ color: #fa7373;}
+		.c{ color: #fa7373; font-size: 0.8rem;}
+		.mb{ font-size: 0; width: 3rem;}
+		.btn{ width: 2.9rem; .lh(1.6rem);.border-radius;.di; text-align: center; font-size: 0.8rem; background-color: @tc;}
+		.buy_btn{ color: #fff;}
+	}
+}
+
+.order_list_wp{
+	.slider_nav{ position: relative; font-size: 0; background-color: rgba(255, 255, 255, 0.95);
+		a{ font-size: .6rem; text-align: center; width: 4rem; .di; .lh(1.5rem); position: relative; z-index: 1}
+		.nav_wrap{ position: relative;}
+		.nav_current{ position: absolute; left: 0; top: 0; width: 4rem; height: 1.5rem; border-bottom: 2px solid @tc; }
+	}
+	.loadNote{ text-align: center; font-size: .6rem; .lh(2rem); color: #C7C7C7;  margin-bottom: .5rem;}
+}
+.order_list{ padding-top: .5rem; display: none;
+	.order_item{ background-color: #fff; margin-bottom: .5rem;}
+	.orderState_1{
+		.o_t .tag{ background-color: #FA7373}
+		.o_c .o_btn{ border-color: #FA7373; color: #FA7373;}
+	}
+	.orderState_6,.orderState_7,.orderState_8,.orderState_9{
+		.o_t .tag{ background-color: #A5A9AD}
+	}
+	.o_t{ height:2rem; border-bottom: 1px solid #eee;
+		.tag{ background-color: @tc; color: #fff; width: 4rem; text-align: center; .lh(1.1rem); margin-top: .45rem; box-shadow: .05rem .05rem .01rem 0.05rem rgba(0, 0, 0, 0.08);}
+	}
+	.o_m{ text-align: right;.lh(2rem);
+		a{ color: #B0B4B8; border-left: 1px solid #eee; height: 1.5rem; line-height: 1.5rem; width: 2rem; text-align: center;}
+	}
+	.o_i{ color: #B0B4B8; font-size: .55rem; height: 2rem; padding-right: .5rem;}
+	img{ width: 100%; height: 100%;}
+	h3{padding: 0 .5rem; .lh(2rem);}
+	ul{ width: 28rem;}
+	li{ float: left; width: 3.375rem; height: 3.375rem; border:1px solid #E2E5E8; padding: 1px; margin-right: .5rem; border-radius: .3rem;}
+	.img_i{ float: left;}
+	.img_wp{ margin: 0 .5rem; overflow: hidden; overflow-x: auto; height: 3.375rem; margin-bottom: .5rem;
+		img{ border-radius: .3rem;}
+	}
+	.o_c{
+		padding: 0 .5rem; border-top: 1px solid #eee; .lh(2rem);
+		.rmb{ color: #FA7373;}
+		.o_btn{ border: 2px solid @tc; color: @tc; width: 4rem; text-align: center; height: 1.5rem; line-height: 1.33rem; .border-radius(.2rem); margin-top: .2rem;}
+	}
+}
+
+.orderFixedHead{
+	.slider_nav{position: fixed; top: 0; left: 0; width: 16rem; box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.15)}
+	.slide_body{ padding-top: 1.5rem;}
+}
+

@@ -1,0 +1,121 @@
+@tc:#49a1dd;
+
+.shop_list{
+	ul{padding: 0 0 .4rem .4rem;}
+	li{ float: left; width: 7.4rem; background-color: #fff; margin-right: .4rem; margin-bottom: 0.4rem; position: relative; .border-radius(2px); box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.05);}
+	img{ width: 100%;}
+	.d_t{ padding:0.2rem 2rem 0.2rem 0.2rem;}
+	.d_p{ position: absolute; right: 0.2rem; top: 0.2rem; color: #fa7373; text-align: right;
+		span{ display: block;}
+		.p{ font-size: 0.7rem;}
+	}
+	.d_i{ position: relative;
+		.n{ position: absolute; right: 0.5rem; top: 0.5rem; background-color: rgba(255, 255, 255, 0.87); border:1px solid #C8C8C8;.border-radius(.5rem); padding: 0 .5rem;}
+	}
+	.d_c{.cf;
+		a{ float: left; width: 50%; text-align: center; .lh(1.8rem);
+			&:hover{ float: left;}
+			&:active{ background-color: @tc; color: #fff;}
+		}
+	}
+	h2{ font-size: .7rem; color: #52585d; font-weight: normal;}
+	.tag{ color: #a5a9ad;}
+}
+
+.pop_prd_box{  padding: .5rem;
+	h2{ font-size: .7rem;}
+	.closeBtn{ position: absolute; color: #fff; background-color: #fc5a5a; right: 0.5rem; top: -0.5rem; z-index: 1; font-size: .6rem; .lh(1rem); width: 1rem; text-align: center;box-shadow: 0 0 0.1rem #FA7373; }
+    .closeBtn:before { .lh(1.1rem); }
+	.pag{ position: absolute; right: .5rem; top:.5rem; font-size: .7rem; color: #fa7373;}
+	.sliderWrap{ position: relative; margin: 0.5rem 0;}
+	.slider{ height: 150px;}
+	.det{ border-top: 1px solid #ccc; padding: 0.5rem 0;}
+	.c_p{ border-bottom: 1px solid #ccc; padding-bottom: 0.5rem; font-size: 0.65rem;}
+	.c_t{ padding-top: 0.5rem;}
+	.m{ color: @tc; margin-right: 0.5rem;}
+	.num_ct{ border: 1px solid #ccc;text-align: center;
+		input{ width: 2rem; .lh(1.5rem); padding: 0; text-align: center;}
+		a{ font-size: 1rem; width: 1.5rem; .lh(1.5rem)}
+	}
+	.add_to_cart{ background-color: @tc; color: #fff;.lh(1.5rem); padding: 0 0.5rem; .border-radius;}
+	.disabled{ background-color: #A3A3A3;}
+}
+
+//超市首页
+.mk_content{ background-color: #fff; overflow: hidden;}
+.mk_search{
+	padding: .5rem; position: relative;
+	label{ position: absolute; top: .5rem; left: 6.5rem; width: 4rem; .trs; overflow: hidden; height: 1.5rem;
+		input{ background-color: transparent; box-shadow: none; color: #ddd;}
+	}
+	i{color: #ddd; font-size: 1rem;}
+
+	.text{ width: 100%; box-shadow: none; border: 1px solid #ddd; .lh(1.5rem); position: relative; z-index: 1; background-color: transparent;
+		&:focus ~ label{
+			left:14rem;width: 1rem; z-index: 1; 
+			input{ display: none}
+		}
+	}
+}
+.has_search{
+	label{
+		left:14rem;width: 1rem; z-index: 1;
+		input{display: none;}
+	}
+}
+.mk_main{
+	@barW: 3rem;
+	@curc: #D30A24;
+	 margin-bottom: 1rem;background-color: #F1F1F1;
+	 .bar{ width: @barW; text-align: center; 
+		a{ display: block; .lh(1.8rem); border-bottom: 1px solid #E7E5E5; border-top: 1px solid #E7E5E5; border-left: 2px solid #F1F1F1; margin-bottom: -1px;}
+	 	.current{ border-left-color: @curc; color: @curc; background-color: #fff;}
+	 }
+	 .pro_list_wp{ width: 16 - @barW; background-color: #fff; min-height: 22rem;
+	 	li{.cf; padding-left: .5rem;}
+	 	.img_b{ width: 4rem; height: 4rem; float: left; margin-right: .3rem; padding-top: .5rem;}
+	 	h3{ font-size:.6rem; line-height: 1rem; height: 2rem;}
+		img{ height: 3.5rem; width: 3.5rem; .border-radius(.4rem)}
+		.p{ color: @curc; font-size: .6rem;}
+		p{color: #A6A6A6; font-size: .5rem;}
+		.k_wp{ float: left; width: 6.2rem; padding-right: .2rem; height: 4rem; padding-top: .5rem; border-bottom: 1px solid #ddd;}
+		.c_wp{ float: right; width: 2rem; text-align: center;  height: 4rem; border: 1px solid #ddd; border-top: none;
+
+			a{ .lh(1.5rem); font-size: .8rem; display: block;}
+			input{ width: 100%; text-align: center; box-shadow: none; .lh(1rem); padding: 0; color: @curc}
+		}
+		li:first-child{
+			.k_wp{ border-top: 1px solid #ddd;}
+			.c_wp{border-top: 1px solid #ddd;}
+		}
+	 }
+}
+.cart_plug{ position: fixed; height: 3rem; z-index: 1000; bottom: 0; left: 0; width: 100%; background-color: rgba(74, 73, 73, 0.96);
+	.icon{ height: 1.5rem; position: relative; margin: .8rem 0 0 .5rem;}
+	.iconfont{ font-size: 1.5rem; .lh(1.5rem);}
+	.number{ position: absolute; right: -.2rem; top: -.2rem; border-radius: .6rem; background-color: #FD4E00; color:#fff; line-height: 1.2; padding:0 .2rem;}
+	.t_price{ color: #fff; margin-top: 1.2rem; margin-left: .5rem;}
+	.to_sub_or{ background-color: @tc; color: #fff; .lh(3rem); padding: 0 1.5rem;}
+	.cart_list{ position: absolute; display: none;  bottom: 3rem; left: 0; width: 100%;  background-color: #fff; padding: 0 .3rem; box-shadow: 0 -.1rem .2rem rgba(0, 0, 0, 0.54); max-height: 12rem; overflow: hidden; overflow-y: auto;}
+	li{ .lh(2rem); border-bottom: 1px solid #eee;
+		.name{ width: 8rem;}
+		.prc{ color: #ED5552;}
+		input{ box-shadow: none; width: 2rem; text-align: center; padding: 0;}
+	}
+	.caculat{ text-align: center; font-size: 0;
+		a{.di; width: 1.3rem; border-left: 1px solid #eee;border-right: 1px solid #eee; height:2rem; line-height: 1.8rem;  font-size: 1rem;
+			&:active{ background-color: #eee;}
+		}
+		input{.di; font-size: .6rem;}
+	}
+}
+.car_open{
+	.cart_list{ display: block;}
+}
+
+.mkt_sc_wp{
+	.pro_list_wp{ width: 100%;
+		li{ padding: 0 .5rem;}
+		.k_wp{ width: 8rem;}
+	}
+}

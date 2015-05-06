@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta content="fullscreen=yes,preventMove=no" name="ML-Config">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="<%- settings.host_setting %>/style/css/style.css">
+    <title>笑笑超市</title>
+</head>
+<body>
+    <div class="sys_loading" id="sysLoading">加载中...</div>
+    <div class="light_mask" id="lightMask"></div>
+    <% if (user) { %>
+    <div class="login_wrap" id="loginWrap">
+        <!--i class="icon"></i-->
+        <img src="<%- user.avatar %>" alt="" class="head" id="loginBtn">
+        <s class="arr"></s>
+        <div class="login_menu">
+            <a href=""><i class="iconfont icon-mark"></i>我的收藏</a>
+            <a href=""><i class="iconfont icon-mail"></i>我的消息</a>
+            <a href=""><i class="iconfont icon-information"></i>我的订单</a>
+            <a href=""><i class="iconfont icon-box"></i>收货地址</a>
+            <a href=""><i class="iconfont icon-setting"></i>编辑资料</a>
+            <a href=""><i class="iconfont icon-close2"></i>退出登陆</a>
+        </div>
+    </div>
+    <% } else { %>
+       <div class="login_wrap" id="loginWrap">
+        <!--i class="icon"></i-->
+        <span class="head iconfont nologin" id="loginBtn">&#xe610;</span>
+        <s class="arr"></s>
+        <div class="login_menu">
+            <a href="/html/login.html"><i class="iconfont icon-address_people"></i>登陆</a>
+            <a href="/html/regist.html"><i class="iconfont icon-lock"></i>注册</a>
+        </div>
+    </div> 
+    <% } %>
+    <div class="boxWrapper">
+        <header class="main_header cf" id="mainHeader">
+            <a href="/" class="logo index fl iconfont icon-home"></a>
+            <span class="title fl"><%= title %></span>
+            <i class="menu_ico fr iconfont icon-list" id="menuIcon"></i>
+            <div class="menu_box">
+                <form action="/" class="search_form" id="searchForm">
+                    <div class="i_w"><i class="iconfont icon-find"></i><input type="text" class="search_input" placeholder="输入商品名或便利店名搜索"></div>
+                    <div class="i_b"><input type="submit" class="submit_btn prd" value="搜商品"><input type="submit" class="submit_btn" value="搜超市"></div>
+                    
+                </form>
+                <nav class="nav_box">
+                    <a href="/store_list" class="shop"><i class="iconfont icon-store"></i>便利店</a>
+                    <a href="/wp" class="wp"><i class="iconfont icon-motor"></i>社区外卖</a>
+                    <a href="/service" class="service"><i class="iconfont icon-housekeeping"></i>周边服务</a>
+                    <a href="/fruits" class="frt"><i class="iconfont icon-apple"></i>水果超市</a>
+                    <a href="/html/shopping_cart.html" class="shc"><i class="iconfont icon-shopping"></i>购物车</a>
+                    <a href="#" class="area"><i class="iconfont icon-map"></i>切换地区</a>
+                </nav>
+            </div>
+        </header>
+        <div class="wrapper">
+            <div class="main_mask" id="mainMask"></div>
+            <div id="mainBox">
+            

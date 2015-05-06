@@ -1,0 +1,107 @@
+	<%- include common/head %>
+	<div class="content">
+        <div class="search_store_goods cf">
+            <div class="search_field">
+                <i class="search_icon"></i>
+                <input class="search_input" type="text"/>
+            </div>
+            <div class="search_btn cf">
+                <input class="shop fr" type="button" value="搜超市"/>
+                <input class="goods fr" type="button" value="搜商品"/>
+            </div>
+        </div>
+		<div class="shop_list">
+			<ul class="cf" id="goodsListWrap">
+				<li>
+                    <div class="d_t">
+                        <h2>新鲜番茄</h2>
+                        <p class="tag">今日特惠</p>
+                    </div>
+                    <div class="d_p">
+                        <span class="p">￥2.6</span>
+                        <span class="g">500g</span>
+                    </div>
+                    <div class="d_i"><span class="n">1</span><img src="../images/photo02.png" alt="超市照片"/></div>
+                    <div class="d_c cf">
+                        <a class="sub">-</a>
+                        <a class="add">+</a>
+                    </div>  
+                </li>
+				<li>
+                    <div class="d_t">
+                        <h2>新鲜番茄</h2>
+                        <p class="tag">今日特惠</p>
+                    </div>
+                    <div class="d_p">
+                        <span class="p">￥2.6</span>
+                        <span class="g">500g</span>
+                    </div>
+                    <div class="d_i"><span class="n">1</span><img src="../images/photo02.png" alt="超市照片"/></div>
+                    <div class="d_c cf">
+                        <a class="sub">-</a>
+                        <a class="add">+</a>
+                    </div> 
+                </li>
+                <li>
+                    <div class="d_t">
+                        <h2>新鲜番茄</h2>
+                        <p class="tag">今日特惠</p>
+                    </div>
+                    <div class="d_p">
+                        <span class="p">￥2.6</span>
+                        <span class="g">500g</span>
+                    </div>
+                    <div class="d_i"><span class="n">1</span><img src="../images/photo02.png" alt="超市照片"/></div>
+                    <div class="d_c cf">
+                        <a class="sub">-</a>
+                        <a class="add">+</a>
+                    </div> 
+                </li>
+                <li>
+                   <div class="d_t">
+                        <h2>新鲜番茄</h2>
+                        <p class="tag">今日特惠</p>
+                    </div>
+                    <div class="d_p">
+                        <span class="p">￥2.6</span>
+                        <span class="g">500g</span>
+                    </div>
+                    <div class="d_i"><span class="n">1</span><img src="../images/photo01.png" alt="超市照片"/></div>
+                    <div class="d_c cf">
+                        <a class="sub">-</a>
+                        <a class="add">+</a>
+                    </div> 
+                </li>
+			</ul>
+		</div>
+	</div>
+	<%- include common/footer %>
+
+	<script type="text/html" id="prdPopTemp">
+		<div class="pop_prd_box" id="popPrdBox">
+            <a class="closeBtn iconfont icon-close1"></a>
+            <h2>新鲜番茄</h2>
+            <p class="pag">￥2.6/500g</p>
+            <div class="sliderWrap">
+                <div class="slider"></div>
+            </div>
+            <div class="det">
+                番茄，名为西红柿，洋柿子，故名六月是，细胞三元，放假咯看得见啊看见见。番茄，名为西红柿，洋
+            </div>
+            <p class="c_p">库存数量：<span class="m">149</span>  限购数量：<span class="m">无</span>   起购数量：<span class="m">2</span></p>
+            <div class="c_t cf">
+                <div class="num_ct fl">
+                    <a class="sub fl">-</a>
+                    <input type="text" class="text fl" value="1">
+                    <a class="add fl">+</a>
+                </div>
+                <a class="add_to_cart fr">加入购物车</a>
+            </div>
+        </div>
+	</script>
+	<%- include common/script %>
+    <script src="<%= settings.host_setting %>/script/islider.js"></script>
+    <script src="<%= settings.host_setting %>/script/modules/store_detail.js"></script>
+    
+	</body>
+</html>
