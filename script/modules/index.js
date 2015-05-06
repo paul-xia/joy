@@ -24,7 +24,7 @@
 
 			console.log(time);
 		} else if(this.y > 0 && this.y <= refreshSize && !freshObject.enfresh){
-			drapDownNote.text('下拉刷新').removeClass('refresh-on');
+			drapDownNote.text('下拉刷新').removeClass('refresh-on'); 
 			freshObject = {
 				refresh: false,
 				enfresh: true
