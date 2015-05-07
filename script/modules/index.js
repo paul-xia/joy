@@ -3,6 +3,7 @@
 	var showMenuBtn = $('#showMenuBtn');
 	var mainContent = $('#mainContent');
 	var mainMask = $('#mainMask');
+	var mainHeader = $('#mainHeader');
 	var slider = new IScroll('#indexContent', {
 		scrollbars: true,
 		fadeScrollbars: true,
@@ -33,6 +34,12 @@
 
 			console.log(time);
 		}
+
+		if(this.y < this.startY){
+			mainHeader.hide();
+		} else if(this.y > this.startY){
+			mainHeader.show();
+		}
 	});
 	slider.on('scrollEnd', function(){
 		if(drapDownNote.hasClass('refresh-on')){
@@ -43,8 +50,13 @@
 
 	showMenuBtn.on('tap', function(){
 		mainContent.addClass('navigation-show');
+		mainMask.show();
 		mainMask.one('tap.menuShow', function(){
-			mainContent.removeClass('navigation-show')
+			mainContent.removeClass('navigation-show');
+			setTimeout(function(){
+				mainMask.hide();
+			}, 300);
+			return false;
 		});
 	});
 })(Zepto);
