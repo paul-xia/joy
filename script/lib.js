@@ -192,7 +192,7 @@
                     return;
                 }
 
-                if (data.state === 200) {
+                if (data.result === 0) {
                     //onSuccess
                     $.isFunction(others.onSuccess) ? others.onSuccess(data, opts.data) : '';
                     //缓存
@@ -204,9 +204,9 @@
                 } else {
                     //onError
                     if (setting.onError) setting.onError(data);
-                    if (data.state === 999) {
+                    if (data.result === 999) {
                         showLogin();
-                    } else if (data.state === 404 || data.state === 500) {
+                    } else if (data.result === 404 || data.result === 500) {
                         setTimeout(function() {
                             handlerError(data.message || data.result.message);
                         }, 500);

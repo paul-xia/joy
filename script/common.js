@@ -38,4 +38,15 @@ var BASE = {};
         });
     })();
 
+    window.getUrlData = function(){
+        var a = window.location.hash;
+        if (a.indexOf("#") < 0 || a.indexOf("=") < 0)
+            return {};
+        for (var b = a.split("?")[1], c = b.split("&"), d = new Object, e = 0; e < c.length; e++) {
+            var f = c[e].split("=");
+            d[f[0]] = f[1]
+        }
+        return d
+    };
+
 })(Zepto);

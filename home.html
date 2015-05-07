@@ -9,84 +9,28 @@
 				<div class="cont-index" >
 					<div class="drap-down-note" id="drapDownNote">下拉sss刷新</div>	
 					<ul>
-						<li>
-							<a href="detail.html"><img src="images/test.jpg" alt="" class="img"></a>
-							<div class="desc">
-								<span class="di omit desc-text">超过15个字省略省略超过15个字省略省略超过15个字省略省略</span><span class="di price">￥200元/人</span>
-							</div>
-							<div class="cout">
-								<h2>熊出没话题</h2>
-								<address>
-									<i class="dresscon iconfont icon-location2"></i>成都体育馆·1503km·适合3-10岁
-								</address>
-							</div>
-						</li>
-						<li>
-							<a href="detail.html"><img src="images/test.jpg" alt="" class="img"></a>
-							<div class="desc">
-								<span class="di omit desc-text">超过15个字省略省略超过15个字省略省略超过15个字省略省略</span><span class="di price">￥200元/人</span>
-							</div>
-							<div class="cout">
-								<h2>熊出没话题</h2>
-								<address>
-									<i class="dresscon iconfont icon-location2"></i>成都体育馆·1503km·适合3-10岁
-								</address>
-							</div>
-						</li>
-						<li>
-							<a href="detail.html"><img src="images/test.jpg" alt="" class="img"></a>
-							<div class="desc">
-								<span class="di omit desc-text">超过15个字省略省略超过15个字省略省略超过15个字省略省略</span><span class="di price">￥200元/人</span>
-							</div>
-							<div class="cout">
-								<h2>熊出没话题</h2>
-								<address>
-									<i class="dresscon iconfont icon-location2"></i>成都体育馆·1503km·适合3-10岁
-								</address>
-							</div>
-						</li>
-						<li>
-							<a href="detail.html"><img src="images/test.jpg" alt="" class="img"></a>
-							<div class="desc">
-								<span class="di omit desc-text">超过15个字省略省略超过15个字省略省略超过15个字省略省略</span><span class="di price">￥200元/人</span>
-							</div>
-							<div class="cout">
-								<h2>熊出没话题</h2>
-								<address>
-									<i class="dresscon iconfont icon-location2"></i>成都体育馆·1503km·适合3-10岁
-								</address>
-							</div>
-						</li>
-						<li>
-							<a href="detail.html"><img src="images/test.jpg" alt="" class="img"></a>
-							<div class="desc">
-								<span class="di omit desc-text">超过15个字省略省略超过15个字省略省略超过15个字省略省略</span><span class="di price">￥200元/人</span>
-							</div>
-							<div class="cout">
-								<h2>熊出没话题</h2>
-								<address>
-									<i class="dresscon iconfont icon-location2"></i>成都体育馆·1503km·适合3-10岁
-								</address>
-							</div>
-						</li>
-						<li>
-							<a href="detail.html"><img src="images/test.jpg" alt="" class="img"></a>
-							<div class="desc">
-								<span class="di omit desc-text">超过15个字省略省略超过15个字省略省略超过15个字省略省略</span><span class="di price">￥200元/人</span>
-							</div>
-							<div class="cout">
-								<h2>熊出没话题</h2>
-								<address>
-									<i class="dresscon iconfont icon-location2"></i>成都体育馆·1503km·适合3-10岁
-								</address>
-							</div>
-						</li>
 					</ul>
 				</div>
 			</div>
 		</div>
 		
 	</div>
+	<script id="listItemTemp" type="text/html">
+		{{each items}}
+		<li>
+			<a href="detail.html#id={{$value.id}}"><img src="{{root}}{{$value.image}}" alt="" class="img"></a>
+			<div class="desc">
+				<span class="di omit desc-text">{{$value.intro}}</span><span class="di price">{{$value.priceString}}</span>
+			</div>
+			<div class="cout">
+				<h2>熊出没话题</h2>
+				<address>
+					<i class="dresscon iconfont icon-location2"></i>{{$value.activityPlace}}·{{$value.placeScale}}km·适合{{$value.ageString}}
+				</address>
+			</div>
+		</li>
+		{{/each}}
+	</script>
 	<%- include common/script %>
 	<script src="../script/islider.js"></script>
 	<script src="../script/modules/index.js"></script>
