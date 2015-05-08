@@ -1,26 +1,26 @@
 	<%- include common/head %>
 	<div class="content detail-page" id="mainContent">
-		<div class="scroll-wrap">
+		<script id="contentTemp" type="text/html">
+			<div class="scroll-wrap">
 			<div class="detail-info">
 				<div class="img-wp">
-					<img src="images/test.jpg" alt="">
+					<img src="{{img_root + image}}" alt="">
 					<div class="mask cf">
 						<span class="fl tag">报名中</span>
-						<span class="fr price">￥200元/人</span>
+						<span class="fr price">{{priceString}}</span>
 					</div>
 				</div>
 
 				<h2>熊孩的读书下午茶</h2>
-				<div class="part"><i class="di icon iconfont icon-naozhong"></i><span class="di">2015年-04月-19日</span></div>
-				<div class="part"><i class="di icon iconfont icon-location2"></i><span class="di">北京市朝阳区花家地街社科院……</span></div>
-				<div class="part"><i class="di icon iconfont icon-muying"></i><span class="di">3岁—6岁</span></div>
+				<div class="part"><i class="di icon iconfont icon-naozhong"></i><span class="di">{{activityTimeString}}</span></div>
+				<div class="part"><i class="di icon iconfont icon-location2"></i><span class="di">{{placeAddres}}</span></div>
+				<div class="part"><i class="di icon iconfont icon-muying"></i><span class="di">{{ageString}}</span></div>
 			</div>
 
 			<div class="description">
 				<h3>活动详情</h3>
 				<div class="entry">
-					要让小孩兴奋激动不需要太多金钱。实际上，通常童年记忆中最有意义的是那些“小东西”：妈妈搭肩让你去爬树、允许在旅馆的床上跳跃、在雨中疯狂地溅泥水等等。最重要的是，这些孩子着迷的活动都花销很小，甚至免费的。
-					按照这种思路，这里有一些简单、廉价、值得回味的活动，他们肯定会给你和你孩子的一天带来亮点。
+					{{=contentHtml}}
 				</div>
 			</div>
 
@@ -37,18 +37,11 @@
 			<div class="more-share">
 				<h3>更多推荐</h3>
 				<ul class="cf">
-					<li><a href="sdsd/sdsd">
-						<figure><img src="images/test.jpg" alt=""><figcaption>要让小孩兴奋激动不需要太多金钱</figcaption></figure></a>
+				{{each recommendations}}
+					<li><a href="/detail.html?id={{$value.id}}">
+						<figure><img src="{{img_root + $value.image}}" alt=""><figcaption>{{$value.title}}</figcaption></figure></a>
 					</li>
-					<li><a href="">
-						<figure><img src="images/test.jpg" alt=""><figcaption>要让小孩兴奋激动不需要太多金钱</figcaption></figure></a>
-					</li>
-					<li><a href="">
-						<figure><img src="images/test.jpg" alt=""><figcaption>要让小孩兴奋激动不需要太多金钱</figcaption></figure></a>
-					</li>
-					<li><a href="">
-						<figure><img src="images/test.jpg" alt=""><figcaption>要让小孩兴奋激动不需要太多金钱</figcaption></figure></a>
-					</li>
+				{{/each}}
 				</ul>
 			</div>
 		</div>
@@ -56,11 +49,11 @@
 			<a href="" class="fav">加入收藏</a>
 			<a href="" class="bm">马上报名</a>
 		</div>
+		</script>
+		
 	</div>
 	<%- include common/script %>
 	<script src="../script/islider.js"></script>
-	<script>
-		var slider = new IScroll('#mainContent')
-	</script>
+	<script src="../script/modules/detail.js"></script>
 	</body>
 </html>

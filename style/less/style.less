@@ -12,7 +12,7 @@ html{ display: none;}
 	}
 }
 .main-box{ position: absolute; left: 0; top: 0; width: 100%; height: 100%; .transition(-webkit-transform .3s ease);
-	.header{ background-color: @tc; color: #fff; text-align: center; .lh(2rem); position: absolute; top: 0; left: 0; width: 100%; z-index: 1}
+	.header{ background-color: @tc; color: #fff; text-align: center; .lh(2rem); position: absolute; top: 0; left: 0; width: 100%; z-index: 1; .transition(-webkit-transform .3s ease);}
 	.menu-btn{ position: absolute; left: .2rem; top: .2rem; z-index: 1; width: 1.6rem; height: 1.6rem; font-size: 1rem; line-height: 1.6rem;}
 	.main-mask{ position: absolute; top: 0; left: 0; z-index: 2; width: 100%; height: 100%; background-color: #000; display: none; opacity: .2;}
 }
@@ -45,6 +45,7 @@ html{ display: none;}
     background-color: #fff;
     ul{ margin: .3rem;}
     li{ background-color: #eeeeee; margin-bottom: .5rem; border:1px solid #cbcbcb; border-radius: .3rem; overflow: hidden; box-shadow: 0 .1rem .1rem #cbcbcb;}
+    .noMoreNote{   text-align: center;padding: .5rem 0;box-shadow: none;border: 0; background-color: rgba(0, 0, 0, 0);}
     .img{ width: 100%;}
     .desc{
     	padding: .3rem; border-bottom: 1px solid #e5e4e4;
@@ -72,7 +73,9 @@ html{ display: none;}
 	.description{
 		background-color: #eeeeee; margin: .3rem;margin-bottom: .5rem; border:1px solid #cbcbcb; border-radius: .3rem; overflow: hidden; box-shadow: 0 .1rem .1rem #cbcbcb;
 		h3{ padding-left: 1rem; .lh(2rem)}
-		.entry{ padding: 0 1rem 1rem;}
+		.entry{ padding: 0 1rem 1rem; font-size: .5rem;
+			img{ max-width: 100%;}
+		}
 	}
 
 	.share-box{

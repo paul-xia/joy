@@ -1,20 +1,24 @@
 //(function($) {
 	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-	var SiteRoot = 'http://www.joyqz.com/';
-	var Root = SiteRoot + 'dev';
-	var ApiBox = {
-		wxConfigApi: '/wxconfig',
-		listApi: '/m/list'
-	};
+	
+	
 
-	var ajaxOption = {
+	var ajaxOption = $.extend({
 		page: 1,
-		condition: getUrlData.condition || 'all',
+		condition: 'all',
 		word: '',
+		sort: 'read',
+		sortExt: 'time',
 		sortRange: true,
 		longitude: 104.072174,
 		latitude: 30.558323
-	};
+	}, getUrlData());
+
+	var isLoadMark = false;
+	var isOver = false;
+	var sliders;
+
+
 
 	var indexContent = $('#indexContent');
 	var drapDownNote = $('#drapDownNote');
@@ -28,33 +32,16 @@
 	//页面方法
 	(function(){
 		(function(){
-			ajaxListen(function(data){
-				data.root = SiteRoot;
-				var temp = template('listItemTemp', data);
-				indexContent.find('ul').html(temp);
-				loadImgs(data.items, function(){
-					window.sliders = creatIscroll();
-				});
-				
-			});
+			ajaxListen();
 		})();
 
-		mainNavigation.on('tap', 'a', function(){
-			location.reload();
-		});
+		mainNavigation.find('li').eq(ajaxOption.curtag).addClass('current').siblings().removeClass('current');
 
-		function loadImgs(list, callback){
-			var success = 0;
-			for(var i = 0; i < list.length; i ++){
-				loadImg(Root + list[i].image, function(){
-					success ++ ;
-					if(success === list.length){
-						callback();
-					}
-				});
-			}
-			
-		}
+		// mainNavigation.on('tap', 'a', function(){
+		// 	location.reload();
+		// });
+
+		
 	})();
 
 	//菜单点击
@@ -70,16 +57,56 @@
 		});
 	});	
 
-	function ajaxListen(callback){
+	function ajaxListen(){
+		if(isLoadMark || isOver) return;
+		isLoadMark = true;
 		$.ajaxBind({
-			url: Root + ApiBox.listApi
-			// data: ajaxOption
+			url: Root + ApiBox.listApi,
+			data: ajaxOption
 		},{
 			onSuccess: function(data){
 				console.log(data);
-				callback(data);
+				if(!data.items.length){
+					isOver = true;
+					if(!indexContent.find('li.noMoreNote').length) {
+						indexContent.find('ul').append('<li class="noMoreNote">没有更多了...</li>');
+						sliders.refresh();
+					}
+					return;
+				}
+				data.root = SiteRoot;
+				var temp = template('listItemTemp', data);
+				indexContent.find('ul').append(temp);
+				
+				loadImgs(data.items, function(){
+					if(sliders){
+						sliders.refresh();
+					} else {
+						sliders = creatIscroll();
+					}
+					
+				});
+				ajaxOption.page ++ ;
+				setTimeout(function(){
+					isLoadMark = false;
+				}, 1000);
+				
 			}
 		});
+	}
+
+	//加载图片组
+	function loadImgs(list, callback){
+		var success = 0;
+		for(var i = 0; i < list.length; i ++){
+			loadImg(Root + list[i].image, function(){
+				success ++ ;
+				if(success === list.length){
+					callback();
+				}
+			});
+		}
+		
 	}
 	//创建iscroll
 	function creatIscroll() {
@@ -100,17 +127,28 @@
 					refresh: true
 				};
 				drapDownNote.text('释放后刷新').addClass('refresh-on');
+				loadingBox()
 			}
 			if (this.y < this.startY && this.y < 0) {
-				mainHeader.hide();
+				mainHeader.css('transform', 'translate3d(0,-2rem,0)');
 			} else if (this.y > this.startY) {
-				mainHeader.show();
+				mainHeader.css('transform', 'translate3d(0,0,0)');
+			}
+
+			if(this.wrapperHeight - this.y + 4 * FontSize > this.scrollerHeight){
+				ajaxListen();
 			}
 		});
 		slider.on('scrollEnd', function() {
 			
 			if (drapDownNote.hasClass('refresh-on')) {
-				//location.reload();
+				ajaxOption.page = 1;
+				isLoadMark = false;
+				isOver = false;
+				sliders.destroy();
+				sliders = null;
+				drapDownNote.text('下拉刷新').removeClass('refresh-on');
+				ajaxListen();
 			}
 		});
 

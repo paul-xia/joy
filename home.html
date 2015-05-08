@@ -7,7 +7,7 @@
 			<%- include common/header %>
 			<div class="content-wrap" id="indexContent">
 				<div class="cont-index" >
-					<div class="drap-down-note" id="drapDownNote">下拉sss刷新</div>	
+					<div class="drap-down-note" id="drapDownNote">下拉刷新</div>	
 					<ul>
 					</ul>
 				</div>
@@ -18,7 +18,7 @@
 	<script id="listItemTemp" type="text/html">
 		{{each items}}
 		<li>
-			<a href="detail.html#id={{$value.id}}"><img src="{{root}}{{$value.image}}" alt="" class="img"></a>
+			<a href="detail.html?id={{$value.id}}"><img src="{{root}}{{$value.image}}" alt="" class="img"></a>
 			<div class="desc">
 				<span class="di omit desc-text">{{$value.intro}}</span><span class="di price">{{$value.priceString}}</span>
 			</div>
