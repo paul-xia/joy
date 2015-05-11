@@ -1,102 +1,18 @@
-<div class="left">
-    <div class="si-tree-wrp">
-        <ul id="tree" class="si-tree" controller="Category" relationship="Category">
-            <li id="">
-                <span class="opened" unajaxable="true"></span>
-                <a class="current">所有类别</a>
-                <ul style="display:block">
-                    <li id="527">
-                        <span class="unopen"></span>
-                        <a>[01]123</a>
-                    </li>
-                    <li id="529">
-                        <span class="unopen"></span>
-                        <a>[02]饮品123</a>
-                    </li>
-                    <li id="531">
-                        <span class="unopen"></span>
-                        <a>[03]酒类456</a>
-                    </li>
-                    <li id="532">
-                        <span class="open"></span>
-                        <a>[04]香烟</a>
-                    </li>
-                    <li id="533">
-                        <span class="opened" unajaxable="true"></span>
-                        <a>[05]日化品</a>
-                        <ul style="display: block;">
-                            <li id="4810" undefined=""><span class="opened" unajaxable="true"></span>
-                                <a>[0501]洗衣类</a>
-                                <ul style="display: block;">
-                                    <li id="4816" undefined=""><span class="unopen"></span>
-                                        <a>[050101]化妆品</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li id="534">
-                        <span class="opened" unajaxable="true"></span>
-                        <a>[06]个人护理</a>
-                        <ul style="display: block;">
-                            <li id="4406" undefined=""><span class="unopen"></span>
-                                <a>[0601]洗发水</a></li>
-                            <li id="4407" undefined=""><span class="unopen"></span>
-                                <a>[0602]沐浴露</a></li>
-                            <li id="4797" undefined=""><span class="unopen"></span>
-                                <a>[0603]洗面奶</a></li>
-                        </ul>
-                    </li>
-                    <li id="535">
-                        <span class="opened" unajaxable="true"></span>
-                        <a>[07]冲调食品</a>
-                        <ul style="display: block;">
-                            <li id="4799" undefined=""><span class="opened" unajaxable="true"></span>
-                                <a>[0701]咖啡</a>
-                                <ul style="display: block;">
-                                    <li id="4802" undefined=""><span class="unopen"></span>
-                                        <a>[070101] 雀巢咖啡</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li id="4801">
-                        <span class="unopen"></span>
-                        <a>[08]11</a>
-                    </li>
-                    <li id="4804">
-                        <span class="open"></span>
-                        <a>[09]大类</a>
-                    </li>
-                    <li id="4806">
-                        <span class="unopen"></span>
-                        <a>[10]副食</a>
-                    </li>
-                    <li id="4807">
-                        <span class="unopen"></span>
-                        <a>[11]甜味饼干</a>
-                    </li>
-                    <li id="4808">
-                        <span class="unopen"></span>
-                        <a>[12]新类</a>
-                    </li>
-                    <li id="4809">
-                        <span class="unopen"></span>
-                        <a>[13]iii</a>
-                    </li>
-                    <li id="4812">
-                        <span class="unopen"></span>
-                        <a>[14]项羽</a>
-                    </li>
-                    <li id="4814">
-                        <span class="unopen"></span>
-                        <a>[15]rewr</a>
-                    </li>
-                    <li id="4818">
-                        <span class="unopen"></span>
-                        <a>[16]test</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
+<div class="navigation" id="mainNav">
+	<form id="searchForm" action="home.html" method="get">
+		<fieldset>
+			<input class="text" type="text" value="" name="word" placeholder="搜索活动">
+			<input type="hidden" name="condition" value="word">
+			<button class="submit iconfont icon-sousuo" type="submit" value=""></button>
+		</fieldset>	
+	</form>
+	<ul id="mainNavigation">
+		<li class="current" data-icon="location2"><a href="home.html?curtag=0"><i class="di ibn iconfont icon-location2"></i><span class="di">离我最近</span><i class="di iarr iconfont icon-youjiantou"></i></a></li>
+		<li class="" data-icon="jiaxingshoucang"><a href="home.html?condition=price&word=0&curtag=1"><i class="di ibn iconfont icon-jiaxingshoucang"></i><span class="di">免费活动</span><i class="di iarr iconfont icon-youjiantou"></i></a></li>
+		<li class="" data-icon="huwaixian"><a href="home.html?condition=category&word=uavZBwSmR862NvfxfAWS_g&curtag=2"><i class="di ibn iconfont icon-huwaixian"></i><span class="di">户外活动</span><i class="di iarr iconfont icon-youjiantou"></i></a></li>
+		<li class="" data-icon="fangzi"><a href="home.html?condition=category&word=u5X0QhVaQx2iiljGlu4nOQ&curtag=3"><i class="di ibn iconfont icon-fangzi"></i><span class="di">室内活动</span><i class="di iarr iconfont icon-youjiantou"></i></a></li>
+		<li class="" data-icon="camera"><a href="home.html?condition=category&word=IaUSFGjlQv-NvfCciAGbDA&curtag=4"><i class="di ibn iconfont icon-camera"></i><span class="di">演出展览</span><i class="di iarr iconfont icon-youjiantou"></i></a></li>
+		<li class="" data-icon="youjiantou"><a href="home.html?condition=category&word=vbMFBYNQSjWWrhsEqp4qAA&curtag=5"><i class="di ibn iconfont icon-liwu"></i><span class="di">家庭旅行</span><i class="di iarr iconfont icon-youjiantou"></i></a></li>
+		<li class=""><a href="javascript:alert('请在微信主菜单下点击“我”，然后再点击“收藏”查 看。');"><i class="di ibn iconfont icon-wodezuiai"></i><span class="di">我的收藏</span><i class="di iarr iconfont icon-youjiantou"></i></a></li>
+	</ul>	
 </div>

@@ -119,7 +119,7 @@
             }, setting);
 
             setting = $.extend({
-                loading: true,
+                loading: false,
                 msgArea: null,
                 stringify: false,
                 onBegin: null,
@@ -131,7 +131,7 @@
             }, others);
 
             var loadingArea = null,
-                loading = new Object(),
+                //loading = new Object(),
                 ajaxOpts = new Object();
             if (typeof setting.onBegin === 'function') {
                 setting.onBegin();
@@ -144,12 +144,15 @@
             // }
 
             opts.type = opts.type.toUpperCase();
-
-            if (opts.type !== 'GET' && setting.stringify) {
+            opts.data = $.extend({
+                urlString: location.href,
+                sendTime: new Date().getTime()
+            }, opts.data);
+            if (opts.type !== 'GET') {
                 if (opts.type != 'GET' && opts.data) {
                     opts.data = $.stringify(opts.data);
                 }
-                opts.contentType = 'text/html; charset=utf-8';
+                opts.contentType = 'application/json; charset=utf-8';
                 opts.processData = false;
             }
             // if (opts.type == 'GET' && (/\{*\}/).test(opts.url)) {

@@ -7,21 +7,21 @@ html{ display: none;}
 
 .content{ position: absolute; top: 0; left: 0; width: 16rem; height: 100%; overflow: hidden;
 	&.navigation-show{
-		.navigation{.transform(translate3d(10rem, 0, 0))}
+		.navigation{.transform(scale(1) translate3d(10rem,0,0));}
 		.main-box{ .transform(translate3d(10rem, 0, 0))}
 	}
 }
-.main-box{ position: absolute; left: 0; top: 0; width: 100%; height: 100%; .transition(-webkit-transform .3s ease);
+.main-box{ position: absolute; left: 0; top: 0; width: 100%; height: 100%; .transition(-webkit-transform .3s ease); box-shadow: 0 0 1rem #000;
 	.header{ background-color: @tc; color: #fff; text-align: center; .lh(2rem); position: absolute; top: 0; left: 0; width: 100%; z-index: 1; .transition(-webkit-transform .3s ease);}
 	.menu-btn{ position: absolute; left: .2rem; top: .2rem; z-index: 1; width: 1.6rem; height: 1.6rem; font-size: 1rem; line-height: 1.6rem;}
-	.main-mask{ position: absolute; top: 0; left: 0; z-index: 2; width: 100%; height: 100%; background-color: #000; display: none; opacity: .2;}
+	.main-mask{ position: absolute; top: 0; left: 0; z-index: 2; width: 100%; height: 100%; background-color: #000; display: none; opacity: .2;.animation(fadeToX2 .3s 0s ease both);}
 }
 .content-wrap{ position: absolute;top: 0; left: 0; bottom: 0; overflow: hidden; width: 100%; float: left;
-	.drap-down-note{ position: absolute; top: 0; left: 0; text-align: center; width: 100%;}
+	.drap-down-note{ position: absolute; top: 1rem; left: 0; text-align: center; width: 100%;}
 	.cont-index{ padding-top: 2rem;}
 }
 
-.navigation{ position: absolute; width: 10rem; left: -10rem; height: 100%; .transition(-webkit-transform .3s ease);background-color: #7d7d7d; 
+.navigation{ position: absolute; width: 10rem; left: -10rem; height: 100%; .transition(-webkit-transform .3s ease); box-shadow:0 0 15rem #000; .transform(scale(.8));background-color: #7d7d7d; 
 	form{  padding: .8rem .5rem;
 		fieldset{position: relative; height: 1.5rem;}
 		.text{ width: 100%; .lh(1.5rem); background-color: #fff; border-radius: .1rem;}
@@ -46,7 +46,7 @@ html{ display: none;}
     ul{ margin: .3rem;}
     li{ background-color: #eeeeee; margin-bottom: .5rem; border:1px solid #cbcbcb; border-radius: .3rem; overflow: hidden; box-shadow: 0 .1rem .1rem #cbcbcb;}
     .noMoreNote{   text-align: center;padding: .5rem 0;box-shadow: none;border: 0; background-color: rgba(0, 0, 0, 0);}
-    .img{ width: 100%;}
+    .img{ width: 100%; min-height: 5rem;}
     .desc{
     	padding: .3rem; border-bottom: 1px solid #e5e4e4;
     }
@@ -58,6 +58,7 @@ html{ display: none;}
 }
 
 .detail-page{ position: relative;
+	.share_note{position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3;.bg("share_note.png", no-repeat, center top, rgba(0, 0, 0, 0.2)); background-size: 90% auto; display: none;}
 	.scroll-wrap{ padding-bottom: 3rem;}
 	.detail-info{background-color: #eeeeee; margin: .3rem;margin-bottom: .5rem; border:1px solid #cbcbcb; border-radius: .3rem; overflow: hidden; box-shadow: 0 .1rem .1rem #cbcbcb;
 		img{ width: 100%;}

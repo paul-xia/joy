@@ -1,17 +1,15 @@
-//(function($) {
-	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+wxConfigLoad(function() {
 	
-	
-
 	var ajaxOption = $.extend({
 		page: 1,
 		condition: 'all',
 		word: '',
 		sort: 'read',
 		sortExt: 'time',
-		sortRange: true,
-		longitude: 104.072174,
-		latitude: 30.558323
+		sortRange: BASE.sortRange,
+		longitude: BASE.locationData && BASE.locationData.longitude,
+		latitude: BASE.locationData && BASE.locationData.latitude,
+		curtag: 0
 	}, getUrlData());
 
 	var isLoadMark = false;
@@ -31,11 +29,13 @@
 
 	//页面方法
 	(function(){
-		(function(){
-			ajaxListen();
-		})();
+		var currentLi = mainNavigation.find('li').eq(ajaxOption.curtag);
+		//初始化
+		ajaxListen();
 
-		mainNavigation.find('li').eq(ajaxOption.curtag).addClass('current').siblings().removeClass('current');
+		currentLi.addClass('current').siblings().removeClass('current');
+
+		$('#titleBar').find('span').text(currentLi.text()).end().find('i').attr('class', 'di di iconfont icon-' + currentLi.data('icon'));
 
 		// mainNavigation.on('tap', 'a', function(){
 		// 	location.reload();
@@ -47,7 +47,9 @@
 	//菜单点击
 	showMenuBtn.on('tap', function() {
 		mainContent.addClass('navigation-show');
+		mainNavigation.find('input[type="text"]').blur();
 		mainMask.show();
+		refreshReadTime({});
 		mainMask.one('tap', function() {
 			mainContent.removeClass('navigation-show');
 			setTimeout(function() {
@@ -59,6 +61,7 @@
 
 	function ajaxListen(){
 		if(isLoadMark || isOver) return;
+		MainLoadingBox = loadingBox();
 		isLoadMark = true;
 		$.ajaxBind({
 			url: Root + ApiBox.listApi,
@@ -70,12 +73,13 @@
 					isOver = true;
 					if(!indexContent.find('li.noMoreNote').length) {
 						indexContent.find('ul').append('<li class="noMoreNote">没有更多了...</li>');
-						sliders.refresh();
+						sliders && sliders.refresh();
 					}
 					return;
 				}
-				data.root = SiteRoot;
+				data.root = img_root;
 				var temp = template('listItemTemp', data);
+				if(ajaxOption.page === 1) indexContent.find('ul').empty();
 				indexContent.find('ul').append(temp);
 				
 				loadImgs(data.items, function(){
@@ -84,12 +88,10 @@
 					} else {
 						sliders = creatIscroll();
 					}
-					
+					MainLoadingBox.close();
 				});
 				ajaxOption.page ++ ;
-				setTimeout(function(){
-					isLoadMark = false;
-				}, 1000);
+				isLoadMark = false;
 				
 			}
 		});
@@ -111,7 +113,7 @@
 	//创建iscroll
 	function creatIscroll() {
 		var slider = new IScroll('#indexContent', {
-			scrollbars:false,
+			scrollbars:true,
 	        fadeScrollbars:true,
 	        bounceLock:false,
 	        momentum:false,
@@ -130,9 +132,9 @@
 				loadingBox()
 			}
 			if (this.y < this.startY && this.y < 0) {
-				mainHeader.css('transform', 'translate3d(0,-2rem,0)');
+				mainHeader.css('-webkit-transform', 'translate3d(0,-2rem,0)');
 			} else if (this.y > this.startY) {
-				mainHeader.css('transform', 'translate3d(0,0,0)');
+				mainHeader.css('-webkit-transform', 'translate3d(0,0,0)');
 			}
 
 			if(this.wrapperHeight - this.y + 4 * FontSize > this.scrollerHeight){
@@ -154,4 +156,4 @@
 
 		return slider;
 	}
-//})(Zepto);
+});

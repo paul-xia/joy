@@ -19,8 +19,8 @@
 		{{each items}}
 		<li>
 			<a href="detail.html?id={{$value.id}}"><img src="{{root}}{{$value.image}}" alt="" class="img"></a>
-			<div class="desc">
-				<span class="di omit desc-text">{{$value.intro}}</span><span class="di price">{{$value.priceString}}</span>
+			<div class="desc cf">
+				<span class="fl omit desc-text">{{$value.intro}}</span><span class="fr price">{{$value.priceString}}</span>
 			</div>
 			<div class="cout">
 				<h2>熊出没话题</h2>
@@ -32,7 +32,7 @@
 		{{/each}}
 	</script>
 	<%- include common/script %>
-	<script src="../script/islider.js"></script>
-	<script src="../script/modules/index.js"></script>
+	<script src="./script/islider.js"></script>
+	<script src="./script/modules/index.js"></script>
 	</body>
 </html>

@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         //   build: ['build/', 'build_php/']
         // },
         time: Date.now(),
-        static_host: '',
+        static_host: '../',
         root_host: '',
         //清除build
         clean: {
@@ -85,15 +85,9 @@ module.exports = function(grunt) {
                 options: {
                     title: '麦哈哈',
                     version: '<%=time%>',
-                    user: false,
-                    settings: {
-                        host_setting:'<%=static_host%>'
-                    },
-                    url: function(url) {
-                        return 'http://example.com/formatted/url/' + url;
-                    }
+                    Root_Path: '<%=static_host%>'
                 },
-                src: ['*.html'],
+                src: ['html/*.html'],
                 dest: 'dest/',
                 expand: true
             },
@@ -111,15 +105,7 @@ module.exports = function(grunt) {
                 options: {
                     title: '麦哈哈',
                     version: '<%=time%>',
-                    user:{
-                        avatar:'<%=static_host%>/images/uh_1.png'
-                    },
-                    settings: {
-                        host_setting:'<%=static_host%>'
-                    },
-                    url: function(url) {
-                        return 'http://example.com/formatted/url/' + url;
-                    }
+                    Root_Path: '<%=static_host%>'
                 },
                 src: ['<%=paramIn%>'],
                 dest: 'dest/',
@@ -156,8 +142,8 @@ module.exports = function(grunt) {
                     livereload: '<%=connect.options.livereload%>' //监听前面声明的端口  35729
                 },
                 files: [ //下面文件的改变就会实时刷新网页
-                    '*.html',
-                    'common/*.ejs',
+                    'html/*.html',
+                    'html/common/*.ejs',
                     'style/{,*/}*.{png,jpg,gif,css,less}',
                     'script/{,*/}*.js'
                 ]
@@ -171,7 +157,7 @@ module.exports = function(grunt) {
                 }
             },
             ejs: {
-                files: '*.html',
+                files: 'html/*.html',
                 tasks: ['ejs:watch'],
                 options: {
                     cwd: '',
@@ -182,7 +168,7 @@ module.exports = function(grunt) {
                 files: '*.ejs',
                 tasks: ['ejs:build'],
                 options: {
-                    cwd: 'common/',
+                    cwd: 'html/common/',
                     spawn: false
                 }
             },

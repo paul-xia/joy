@@ -1,6 +1,7 @@
 	<%- include common/head %>
 	<div class="content detail-page" id="mainContent">
 		<script id="contentTemp" type="text/html">
+			
 			<div class="scroll-wrap">
 			<div class="detail-info">
 				<div class="img-wp">
@@ -13,7 +14,7 @@
 
 				<h2>熊孩的读书下午茶</h2>
 				<div class="part"><i class="di icon iconfont icon-naozhong"></i><span class="di">{{activityTimeString}}</span></div>
-				<div class="part"><i class="di icon iconfont icon-location2"></i><span class="di">{{placeAddres}}</span></div>
+				<div class="part" id="addressJumpBtn"><i class="di icon iconfont icon-location2"></i><span class="di">{{placeAddres}}</span></div>
 				<div class="part"><i class="di icon iconfont icon-muying"></i><span class="di">{{ageString}}</span></div>
 			</div>
 
@@ -24,21 +25,13 @@
 				</div>
 			</div>
 
-			<div class="share-box">
-				<h3>分享给其他妈妈......</h3>
-				<div class="share-btn">
-					<a href="" class="s-btn pyq">朋友圈</a>
-					<a href="" class="s-btn wx">微信</a>
-					<a href="" class="s-btn qq">QQ</a>
-					<a href="" class="s-btn wb">微博</a>
-				</div>
-			</div>
+			
 
 			<div class="more-share">
 				<h3>更多推荐</h3>
 				<ul class="cf">
 				{{each recommendations}}
-					<li><a href="/detail.html?id={{$value.id}}">
+					<li><a href="detail.html?id={{$value.id}}#mp.weixin.qq.com">
 						<figure><img src="{{img_root + $value.image}}" alt=""><figcaption>{{$value.title}}</figcaption></figure></a>
 					</li>
 				{{/each}}
@@ -46,14 +39,15 @@
 			</div>
 		</div>
 		<div class="pdd-btn">
-			<a href="" class="fav">加入收藏</a>
-			<a href="" class="bm">马上报名</a>
+			<a href="javascript:;" id="showFav" class="fav">加入收藏</a>
+			<a href="tel:{{phone}}" class="bm">马上报名</a>
 		</div>
+		<div class="share_note" id="shareNoteMask"></div>
 		</script>
 		
 	</div>
 	<%- include common/script %>
-	<script src="../script/islider.js"></script>
-	<script src="../script/modules/detail.js"></script>
+	<script src="<%-Root_Path%>script/islider.js"></script>
+	<script src="<%-Root_Path%>script/modules/detail.js"></script>
 	</body>
 </html>

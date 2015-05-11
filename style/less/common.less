@@ -5,7 +5,7 @@
 .di{ .di;}
 .cf{.cf;}
 
-body{.animation(bounceIn .3s .5s ease both);}
+body{.animation(fadeIn .3s .5s ease both);}
 @font-face {font-family: "iconfont";
   src: url('images/iconfont.eot'); /* IE9*/
   src: url('images/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -64,7 +64,7 @@ body{.animation(bounceIn .3s .5s ease both);}
     top: 0;
     left: 0;
     display: none;
-    background-color: rgba(0, 0, 0, 0.28);
+    background-color: rgba(255, 255, 255, 0.4);
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -72,6 +72,7 @@ body{.animation(bounceIn .3s .5s ease both);}
     user-select: none;
     margin: 0 !important;
     padding: 0 !important;
+    .animation(fadeIn .3s 0s ease both);
     .cloud {
         position: absolute;
         top: 50%;
@@ -79,7 +80,7 @@ body{.animation(bounceIn .3s .5s ease both);}
         width: 1.6rem; height: 1.6rem;
         margin: -0.8rem 0 0 -0.8rem;
         font-size: 0; border-radius: 50%; opacity: .8;
-        background-color: #fff;
+        background-color: @tc;
         .animation(rotateplane 1.2s infinite ease-in-out);
     }
 }

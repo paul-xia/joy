@@ -1,47 +1,38 @@
 	<%- include common/head %>
-	<div class="content">
-		<!-- slider -->
-		<div class="slider_wrap">
-			<div class="slider" id="slider">
+	<div class="content" id="mainContent">
+		<!-- navigation -->
+		<%- include common/navigation %>
+		<div class="main-box">
+			<div class="main-mask" id="mainMask"></div>
+			<%- include common/header %>
+			<div class="content-wrap" id="indexContent">
+				<div class="cont-index" >
+					<div class="drap-down-note" id="drapDownNote">下拉刷新</div>	
+					<ul>
+					</ul>
+				</div>
 			</div>
 		</div>
 		
-		<!-- index module -->
-		<div class="m_index cf">
-			<div class="l_box fl">
-				<div class="ml">
-					<a href="" class="shop">
-						<span class="t">便利店</span>
-						<p><i class="icon iconfont icon-store"></i></p>
-					</a>
-				</div>
-				<div class="ml cf">
-					<a href="/" class="wm fl">
-						<span class="t">社区外卖</span>
-						<p><i class="icon iconfont icon-motor"></i></p>
-					</a>
-					<a href="/" class="svc fr">
-						<span class="t">周边服务</span>
-						<p><i class="icon iconfont icon-housekeeping"></i></p>
-					</a>
-				</div>
-			</div>
-			<div class="r_box fr">
-				<a href="" class="frs">
-					<span class="t">水果超市</span>
-					<p><i class="icon iconfont icon-apple"></i></p>
-				</a>
-			</div>
-		</div>
-
-		<!-- 推荐 -->
-		<div class="m_rmd">
-			<div>这里是推荐模块</div>
-		</div>
 	</div>
-	<%- include common/footer %>
+	<script id="listItemTemp" type="text/html">
+		{{each items}}
+		<li>
+			<a href="detail.html?id={{$value.id}}#mp.weixin.qq.com"><img src="{{root}}{{$value.image}}" alt="" class="img"></a>
+			<div class="desc cf">
+				<span class="fl omit desc-text">{{$value.intro}}</span><span class="fr price">{{$value.priceString}}</span>
+			</div>
+			<div class="cout">
+				<h2>熊出没话题</h2>
+				<address>
+					<i class="dresscon iconfont icon-location2"></i>{{$value.activityPlace}}·{{$value.placeScale}}km·适合{{$value.ageString}}
+				</address>
+			</div>
+		</li>
+		{{/each}}
+	</script>
 	<%- include common/script %>
-	<script src="../script/islider.js"></script>
-	<script src="../script/modules/index.js"></script>
+	<script src="<%-Root_Path%>script/islider.js"></script>
+	<script src="<%-Root_Path%>script/modules/index.js"></script>
 	</body>
 </html>
