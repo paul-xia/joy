@@ -1,17 +1,17 @@
 wxConfigLoad(function() {
 	var urlData = getUrlData();
 	var mainContent = $('#mainContent');
-	wx.checkJsApi({
-      jsApiList: [
-        'onMenuShareTimeline',
-        'onMenuShareAppMessage',
-        'onMenuShareQQ',
-        'onMenuShareWeibo'
-      ],
-      success: function (res) {
-        alert(JSON.stringify(res));
-      }
-    });
+	// wx.checkJsApi({
+ //      jsApiList: [
+ //        'onMenuShareTimeline',
+ //        'onMenuShareAppMessage',
+ //        'onMenuShareQQ',
+ //        'onMenuShareWeibo'
+ //      ],
+ //      success: function (res) {
+ //        alert(JSON.stringify(res));
+ //      }
+ //    });
 
 	$.ajaxBind({
 		url: Root + ApiBox.detailApi,

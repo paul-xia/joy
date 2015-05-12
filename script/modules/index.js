@@ -49,7 +49,6 @@ wxConfigLoad(function() {
 		mainContent.addClass('navigation-show');
 		mainNavigation.find('input[type="text"]').blur();
 		mainMask.show();
-		refreshReadTime({});
 		mainMask.one('tap', function() {
 			mainContent.removeClass('navigation-show');
 			setTimeout(function() {
